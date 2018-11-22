@@ -1,0 +1,61 @@
+#wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+	@include media('>=tablet') {
+		font-size: 18px;
+	}
+
+	@include media('>=desktop') {
+		font-size: 20px;
+		line-height: 1.64;
+	}
+}
+
+.container {
+	max-width: 1626px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 20px;
+
+	@include media('>=desktop') {
+		padding: 0 40px;
+	}
+
+	@include media('>=widescreen') {
+		padding: 0 86px;
+	}
+
+	&.container-md {
+		max-width: 1370px;
+	}
+
+	&.container-sm {
+		max-width: 1276px;
+	}
+}
+
+.light-bg {
+	background-color: $light-gray;
+}
+
+.bg-parallax {
+	@include absolute;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+
+	img {
+		height: auto;
+		position: absolute;
+		width: auto;
+	}
+}
+
+.is-touch-device {
+	background-size: cover;
+}
+
+
+
+

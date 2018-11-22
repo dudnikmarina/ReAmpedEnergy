@@ -1,0 +1,349 @@
+/* header style */
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 20px 0;
+	z-index: 10;
+	background: $primary;
+
+	@include media('>=phone') {
+		padding: 30px 0 28px;
+	}
+
+	@include media('>=widescreen') {
+		padding: 60px 0 40px;
+	}
+
+	&.alt-bg {
+		background: rgba(10, 222, 188, 0.8);
+	}
+
+	.btn {
+		box-shadow: 0 0 20px 1px rgba(0, 0, 0, .05), inset -6px -10px 50px -24px rgba(0, 0, 0, .7);
+
+		&.disabled {
+			box-shadow: none;
+		}
+	}
+}
+
+/* main logo stule */
+.logo {
+	img {
+		width: 55px;
+		height: 47px;
+
+		@include media('>=phone') {
+			width: 97px;
+			height: 97px;
+
+		}
+
+		@include media('>=desktop') {
+			width: 165px;
+			height: 67px;
+		}
+
+		@include media('>=widescreen') {
+			width: 285px;
+			height: 112px;
+		}
+	}
+}
+
+.menu-holder {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	.btn-holder {
+		margin: 0 35px 0 0;
+	}
+
+	> .btn-holder {
+		@include media('<desktop') {
+			display: none;
+		}
+	}
+}
+
+/* nav opener style */
+.nav-opener {
+	width: 34px;
+	height: 34px;
+	float: right;
+	position: relative;
+
+	@include media('>=phone') {
+		width: 49px;
+		height: 49px;
+		margin: 28px 0;
+	}
+
+	&:before,
+	&:after,
+	span {
+		@include animate(background);
+		background: #00a683;
+		position: absolute;
+		height: 3px;
+		top: 17px;
+		left: 0;
+		right: 0;
+		border-radius: 5px;
+
+		@include media('>=phone') {
+			top: 23px;
+			height: 7px;
+		}
+	}
+
+	&:before,
+	&:after{
+		content: '';
+		top: 5px;
+	}
+
+	&:before {
+		@include media('>=phone') {
+			top: 6px;
+		}
+	}
+
+	&:after {
+		top: 29px;
+
+		@include media('>=phone') {
+			top: 39px;
+		}
+	}
+
+
+	&:hover {
+		&:before,
+		&:after,
+		span {
+			background: $white;
+		}
+	}
+}
+
+/* nav close style */
+.nav-close {
+	position: absolute;
+	width: 34px;
+	height: 34px;
+	float: right;
+	top: 50%;
+	right: 18px;
+	transform: translateY(-50%);
+
+	@include media('>=phone') {
+		right: 48px;
+		width: 49px;
+		height: 49px;
+	}
+
+	@include media('>=widescreen') {
+		right: 88px;
+		width: 49px;
+		height: 49px;
+	}
+
+	&:before,
+	&:after,
+	{
+		@include animate(background);
+		position: absolute;
+		height: 3px;
+		border-radius: 5px;
+		transform: rotate(45deg);
+		top: 50%;
+		left: -3px;
+		right: -3px;
+		background: $white;
+
+		@include media('>=phone') {
+			height: 7px;
+		}
+	}
+
+
+	&:before,
+	&:after{
+		content: '';
+		top: 15px;
+
+		@include media('>=phone') {
+			top: 23px;
+		}
+	}
+
+	&:after {
+		transform: rotate(-45deg);
+	}
+
+	&:hover {
+		opacity: .8;
+	}
+}
+
+.nav-holder {
+	height: calc(100% - 87px);
+	padding: 30px 20px 50px;
+	overflow: hidden;
+	overflow-y: auto;
+
+	@include media('>=phone') {
+		height: calc(100% - 163px);
+		padding: 50px 50px;
+	}
+
+	@include media('>=widescreen') {
+		height: calc(100% - 212px);
+		padding: 85px;
+	}
+}
+
+.nav-drop {
+	transition: transform .5s ease-in-out;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	z-index: 999;
+	color: $white;
+	background-color: $primary;
+	transform: translateX(100%);
+
+	@include media('>=desktop') {
+		width: 50%;
+	}
+
+	.nav-active & {
+		transform: translateX(0);
+	}
+}
+
+.nav-menu {
+	@extend %listreset;
+	width: 100%;
+
+	a {
+		display: block;
+		color: inherit;
+		text-decoration: none;
+		font-weight: 800;
+		padding: 15px 0;
+	}
+
+	&.hover {
+		a {
+			color: #00a683;
+
+			&:hover {
+				color: $white;
+			}
+		}
+	}
+}
+
+.nav-logo {
+	margin: 0 20px 0 0;
+	@include media('>=desktop') {
+		display: none;
+	}
+
+	img {
+		width: 55px;
+		height: 47px;
+
+		@include media('>=phone') {
+			width: 97px;
+			height: 97px;
+
+		}
+		@include media('>=desktop') {
+			width: 165px;
+			height: 67px;
+		}
+	}
+}
+
+.menu-holder-inner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	background: #00a683;
+	padding: 10px 20px 15px;
+
+	@include media('>=phone') {
+		justify-content: flex-start;
+		padding: 37px 50px 29px;
+	}
+
+	@include media('>=desktop') {
+		padding: 56px 50px 47px 30px;
+	}
+
+	@include media('>=desktop-lg') {
+		padding: 56px 50px 47px;
+	}
+
+	@include media('>=widescreen') {
+		padding: 64px 90px 63px 20px;
+	}
+
+	.profile-box {
+		color: $primary;
+		@include media('<tablet') {
+			margin: 0 10px 0 0;
+		}
+
+		@include media('<widescreen') {
+			margin: 0 25px 0 0;
+		}
+
+		@include media('<tablet') {
+			margin: 0 15px 0 0;
+		}
+
+		@include media('<phone') {
+			font-size: 12px;
+			margin: 0 0 5px;
+		}
+	}
+
+	.btn-holder {
+		margin: 0;
+
+		@include media('>=phone') {
+			margin: 0 65px 0 0;
+		}
+	}
+
+	.icon-user {
+		font-size: 28px;
+	}
+
+	strong {
+		@include media('>=phone') {
+			font-size: 13px;
+		}
+	}
+
+	.btn {
+		@include media('<phone') {
+			font-size: 10px;
+			padding: 4px 26px;
+		}
+	}
+}
+
+.resize-active *{
+	transition: none !important;
+}

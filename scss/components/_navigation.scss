@@ -1,0 +1,54 @@
+/* navigation style */
+.navigation{
+	ul {
+		@extend %listreset;
+		display: flex;
+		font-size: 35px;
+		margin: 0 -10px;
+		justify-content: space-around;
+
+		@include media('>=xs-phone') {
+			font-size: 50px;
+		}
+
+		@include media('>=phone') {
+			font-size: 60px;
+			margin: 0 -15px;
+		}
+
+		@include media('>=tablet') {
+			font-size: 50px;
+		}
+
+		@include media('>=desktop') {
+			justify-content: flex-end;
+		}
+
+		@include media('>=widescreen') {
+			margin: 0 -33px;
+			font-size: 60px;
+		}
+	}
+
+	li {
+		padding: 0 10px;
+
+		@include media('>=phone') {
+			padding: 0 15px;
+		}
+
+		@include media('>=widescreen') {
+			padding: 0 33px;
+		}
+
+		&.active {
+			a {
+				color: $primary;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,82 @@
+/* intro block style */
+.intro-block {
+	address {
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		padding: 0 20px 0 50px;
+		margin: 0 ;
+
+		@include media('>=phone') {
+			padding: 0 32px 0 60px;
+		}
+
+		@include media('>=widescreen') {
+			padding-top: 5px;
+		}
+
+		&:after,
+		&:before {
+			position: absolute;
+			font-family: 'icomoon';
+			color: $primary;
+		}
+
+		&:after {
+			content: "\e908";
+			top: 50%;
+			left: 0;
+			font-size: 38px;
+			font-weight: 800;
+			transform: translateY(-60%);
+
+			@include media('>=phone') {
+				font-size: 45px;
+			}
+		}
+
+/* 		&:before {
+	content: "\e907";
+	top: -5px;
+	right: 0;
+	font-size: 25px;
+
+	@include media('>=phone') {
+		font-size: 30px;
+	}
+	} */
+}
+}
+
+.intro-holder {
+	position: relative;
+	align-items: center;
+	padding: 30px 0;
+
+	@include media('>=phone') {
+		padding: 38px 0;
+
+	}
+
+	@include media('>=tablet') {
+		padding: 23px 0 10px;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		height: 2px;
+		bottom: 0;
+		left: 15px;
+		right: 15px;
+		background: $gray-500;
+	}
+}
+
+/* address box stule */
+.address-box {
+	@include media('<tablet') {
+		display: flex;
+		justify-content: center;
+	}
+}

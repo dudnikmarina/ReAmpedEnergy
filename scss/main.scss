@@ -1,0 +1,49 @@
+$breakpoints: (
+	'xs-phone': 420px,
+	'phone': 620px,
+	'tablet': 805px,
+	'desktop': 1024px,
+	'desktop-lg': 1070px,
+	'widescreen': 1540px
+);
+
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+@import 'vendors/include-media';
+
+@import "vendors/bootstrap/functions";
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/mixins";
+
+@import "bootstrap-custom";
+
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/helpers';
+
+@import 'base/typography';
+@import "vendors/icomoon";
+
+@import 'layout/common';
+@import 'layout/header';
+
+@import 'components/buttons';
+@import 'components/card';
+@import 'components/profile-box';
+@import 'components/info-block';
+@import 'components/intro-block';
+@import 'components/navigation';
+@import 'components/social-block';
+
+@import 'layout/footer';

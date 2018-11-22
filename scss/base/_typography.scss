@@ -1,0 +1,82 @@
+// Typography
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+	line-height: 1.1;
+
+	@include media('>=phone') {
+		line-height: 1.23;
+	}
+}
+
+h1, .h1 {
+	font-size: $h1-font-size;
+	margin: 0 0 25px;
+
+	@include media('>=phone') {
+		font-size: 52px;
+		margin: 0 0 40px;
+	}
+
+	@include media('>=widescreen') {
+		font-size: 58px;
+		margin: 0 0 45px;
+	}
+}
+
+h5, .h5 {
+	font-size: $h5-font-size;
+
+	@include media('>=widescreen') {
+		font-size: 40px;
+	}
+}
+
+/* image style */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* link style */
+a {
+	@include animate(color background border opacity);
+}
+
+p {
+	margin: 0 0 20px;
+
+	@include media('>=phone') {
+		margin: 0 0 30px;
+	}
+
+	@include media('>=desktop') {
+		margin: 0 0 50px;
+	}
+}
+
+/* sub style */
+sub {
+	bottom: -0.1em;
+	left: -0.5em;
+	font-size: 40%;
+}
+
+/* sup style */
+sup {
+	font-size: 58%;
+}
+
+/* address style */
+address {
+	font-size: 17px;
+
+	@include media('>=phone') {
+		font-size: 23px;
+	}
+}

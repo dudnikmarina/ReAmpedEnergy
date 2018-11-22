@@ -1,0 +1,121 @@
+#footer {
+	font-family: $secondary-font-sans-serif;
+	font-size: 16px;
+	padding: 55px 0;
+	text-align: center;
+
+	@include media('>=tablet') {
+		text-align: left;
+		padding: 90px 0;
+	}
+
+	.container {
+		@include media('>=desktop') {
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+
+	.column {
+		&:nth-child(1) {
+			padding: 0 0 52px;
+
+			@include media('>=desktop') {
+				width: 41%;
+				padding: 0 23px 0 0;
+			}
+		}
+
+		&:nth-child(2) {
+			@include media('>=desktop') {
+				flex:1 0;
+				text-align: right;
+			}
+		}
+	}
+
+	.btn-arrow {
+		@include media('<tablet') {
+			padding-right: 40px;
+		}
+
+		&:after {
+			@include media('<tablet') {
+				right: 15px;
+			}
+		}
+	}
+
+	.social-list {
+		@include media('<tablet') {
+			padding: 0 0 22px;
+			justify-content: center;
+		}
+	}
+}
+
+.inner-footer {
+	text-align: center;
+	margin: 0 0 15px;
+
+	@include media('>=tablet') {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 0 68px;
+	}
+
+	@include media('>=desktop') {
+		justify-content: flex-end;
+	}
+}
+
+.logo-footer {
+	position: relative;
+	width: 104px;
+	display: inline-block;
+	vertical-align: top;
+
+	@include media('>=tablet') {
+		width: 120px;
+		margin: 0 0 0 100px;
+	}
+
+	@include media('>=widescreen') {
+		width: 140px;
+		margin: 0 0 0 140px;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		color: $primary;
+		width: 2px;
+		top: -9px;
+		bottom: -4px;
+		left: -23px;
+		transform: rotate(25deg);
+		background: $primary;
+
+		@include media('>=tablet') {
+			left: -44px;
+		}
+
+		@include media('>=widescreen') {
+			left: -64px;
+			top: -20px;
+			bottom: -20px;
+		}
+	}
+}
+
+.copyright {
+	display: block;
+	color: $gray;
+
+	@include media('<tablet') {
+		font-size: 14px;
+		padding: 0 40px;
+	}
+}
+
